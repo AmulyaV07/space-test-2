@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Regions | NightLight Economy</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-icon">🛰️</span>
+                <span class="logo-text">NightLight<span class="highlight">Economy</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="analysis.html" class="nav-link">Analysis</a>
+                <a href="compare.html" class="nav-link active">Compare</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <button class="btn-primary" id="resetCompareBtn">Reset</button>
+        </div>
+    </nav>
+
+    <main class="compare-container">
+        <div class="page-header">
+            <h1 class="page-title">Region Comparison</h1>
+            <p class="page-subtitle">Compare night-light changes between regions and time periods</p>
+        </div>
+
+        <!-- Comparison Selectors -->
+        <section class="compare-config">
+            <div class="compare-grid">
+                <div class="compare-selector">
+                    <h3>🅰️ Region A</h3>
+                    <select id="regionA" class="compare-select">
+                        <option value="bengaluru">Bengaluru</option>
+                        <option value="delhi">Delhi NCR</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="jharkhand">Jharkhand</option>
+                    </select>
+                    <select id="yearA" class="compare-select">
+                        <option value="2015">2015</option>
+                        <option value="2018">2018</option>
+                        <option value="2020">2020</option>
+                        <option value="2024" selected>2024</option>
+                    </select>
+                </div>
+
+                <div class="compare-vs">VS</div>
+
+                <div class="compare-selector">
+                    <h3>🅱️ Region B</h3>
+                    <select id="regionB" class="compare-select">
+                        <option value="bengaluru" selected>Bengaluru</option>
+                        <option value="delhi">Delhi NCR</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="jharkhand">Jharkhand</option>
+                    </select>
+                    <select id="yearB" class="compare-select">
+                        <option value="2015" selected>2015</option>
+                        <option value="2018">2018</option>
+                        <option value="2020">2020</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn-compare" id="startCompareBtn">Start Comparison</button>
+        </section>
+
+        <!-- Before/After Slider -->
+        <section class="slider-section" id="sliderSection" style="display: none;">
+            <h2 class="section-heading">🔍 Visual Comparison</h2>
+            
+            <div class="before-after-slider">
+                <div class="slider-container">
+                    <img src="https://via.placeholder.com/800x500/1a1a2e/00d9ff?text=2015+Night+Lights" 
+                         alt="Before" class="slider-image before-image" id="beforeImage">
+                    <img src="https://via.placeholder.com/800x500/1a1a2e/ff6b9d?text=2024+Night+Lights" 
+                         alt="After" class="slider-image after-image" id="afterImage">
+                    <div class="slider-handle" id="sliderHandle">
+                        <div class="slider-line"></div>
+                        <div class="slider-button">⇄</div>
+                    </div>
+                </div>
+                <div class="slider-labels">
+                    <span class="slider-label-left" id="labelA">2015</span>
+                    <span class="slider-label-right" id="labelB">2024</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Stats -->
+        <section class="comparison-stats" id="comparisonStats" style="display: none;">
+            <h2 class="section-heading">📊 Comparative Statistics</h2>
+            
+            <div class="stats-table-container">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th id="headerA">Region A</th>
+                            <th id="headerB">Region B</th>
+                            <th>Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Avg Brightness</td>
+                            <td id="brightA">45.2</td>
+                            <td id="brightB">78.6</td>
+                            <td class="positive" id="brightDiff">+74%</td>
+                        </tr>
+                        <tr>
+                            <td>Urban Area (km²)</td>
+                            <td id="areaA">523</td>
+                            <td id="areaB">845</td>
+                            <td class="positive" id="areaDiff">+62%</td>
+                        </tr>
+                        <tr>
+                            <td>Growth Rate</td>
+                            <td id="growthA">5.2%</td>
+                            <td id="growthB">8.7%</td>
+                            <td class="positive" id="growthDiff">+3.5%</td>
+                        </tr>
+                        <tr>
+                            <td>Hotspots</td>
+                            <td id="hotA">12</td>
+                            <td id="hotB">28</td>
+                            <td class="positive" id="hotDiff">+133%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Comparison Chart -->
+            <div class="chart-comparison">
+                <h3 class="chart-title-compare">Growth Trajectory Comparison</h3>
+                <canvas id="comparisonChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/data-fetch.js"></script>
+    <script src="js/compare.js"></script>
+</body>
+</html>

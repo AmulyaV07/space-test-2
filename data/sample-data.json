@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "source": "NASA VIIRS Day-Night Band",
+    "resolution": "500m",
+    "dataVersion": "2.1",
+    "lastUpdated": "2024-12-05"
+  },
+  "regions": {
+    "bengaluru": {
+      "name": "Bengaluru",
+      "country": "India",
+      "coordinates": {
+        "lat": 12.9716,
+        "lng": 77.5946
+      },
+      "data": {
+        "2015": {
+          "avgBrightness": 45.2,
+          "maxBrightness": 78.5,
+          "urbanArea": 523,
+          "growthRate": 0,
+          "hotspots": 12
+        },
+        "2018": {
+          "avgBrightness": 52.8,
+          "maxBrightness": 85.3,
+          "urbanArea": 589,
+          "growthRate": 5.6,
+          "hotspots": 16
+        },
+        "2020": {
+          "avgBrightness": 58.4,
+          "maxBrightness": 89.7,
+          "urbanArea": 645,
+          "growthRate": 5.3,
+          "hotspots": 19
+        },
+        "2022": {
+          "avgBrightness": 65.1,
+          "maxBrightness": 94.2,
+          "urbanArea": 712,
+          "growthRate": 5.7,
+          "hotspots": 23
+        },
+        "2024": {
+          "avgBrightness": 72.6,
+          "maxBrightness": 98.8,
+          "urbanArea": 789,
+          "growthRate": 5.8,
+          "hotspots": 28
+        }
+      },
+      "insights": [
+        "Electronic City shows 42% brightness increase",
+        "Whitefield expansion detected",
+        "MG Road peak intensity maintained"
+      ]
+    },
+    "delhi": {
+      "name": "Delhi NCR",
+      "country": "India",
+      "coordinates": {
+        "lat": 28.7041,
+        "lng": 77.1025
+      },
+      "data": {
+        "2015": {
+          "avgBrightness": 58.7,
+          "maxBrightness": 92.3,
+          "urbanArea": 1484,
+          "growthRate": 0,
+          "hotspots": 35
+        },
+        "2018": {
+          "avgBrightness": 64.2,
+          "maxBrightness": 96.8,
+          "urbanArea": 1612,
+          "growthRate": 3.1,
+          "hotspots": 41
+        },
+        "2020": {
+          "avgBrightness": 67.9,
+          "maxBrightness": 98.4,
+          "urbanArea": 1723,
+          "growthRate": 2.9,
+          "hotspots": 45
+        },
+        "2022": {
+          "avgBrightness": 71.5,
+          "maxBrightness": 99.7,
+          "urbanArea": 1845,
+          "growthRate": 2.6,
+          "hotspots": 48
+        },
+        "2024": {
+          "avgBrightness": 75.8,
+          "maxBrightness": 99.9,
+          "urbanArea": 1978,
+          "growthRate": 3.0,
+          "hotspots": 52
+        }
+      }
+    },
+    "jharkhand": {
+      "name": "Jharkhand",
+      "country": "India",
+      "coordinates": {
+        "lat": 23.6102,
+        "lng": 85.2799
+      },
+      "data": {
+        "2015": {
+          "avgBrightness": 28.4,
+          "maxBrightness": 65.2,
+          "urbanArea": 234,
+          "growthRate": 0,
+          "hotspots": 8
+        },
+        "2018": {
+          "avgBrightness": 32.7,
+          "maxBrightness": 71.8,
+          "urbanArea": 278,
+          "growthRate": 4.9,
+          "hotspots": 11
+        },
+        "2020": {
+          "avgBrightness": 36.2,
+          "maxBrightness": 75.4,
+          "urbanArea": 312,
+          "growthRate": 5.4,
+          "hotspots": 14
+        },
+        "2022": {
+          "avgBrightness": 41.8,
+          "maxBrightness": 82.1,
+          "urbanArea": 356,
+          "growthRate": 7.7,
+          "hotspots": 17
+        },
+        "2024": {
+          "avgBrightness": 47.3,
+          "maxBrightness": 87.6,
+          "urbanArea": 412,
+          "growthRate": 6.6,
+          "hotspots": 21
+        }
+      },
+      "anomalies": [
+        {
+          "location": [23.5, 85.3],
+          "type": "mining",
+          "detected": "2023-08",
+          "brightness_spike": 215
+        },
+        {
+          "location": [23.7, 85.1],
+          "type": "mining",
+          "detected": "2023-11",
+          "brightness_spike": 189
+        }
+      ]
+    }
+  },
+  "disasters": {
+    "kerala_floods_2018": {
+      "event": "Kerala Floods",
+      "date": "2018-08-15",
+      "location": [10.8505, 76.2711],
+      "impact": {
+        "brightness_drop": 67,
+        "affected_area": 456,
+        "recovery_months": 4.5,
+        "current_recovery": 92
+      },
+      "timeline": [
+        { "week": 1, "recovery": 33 },
+        { "week": 2, "recovery": 45 },
+        { "month": 1, "recovery": 58 },
+        { "month": 2, "recovery": 67 },
+        { "month": 3, "recovery": 78 },
+        { "month": 4, "recovery": 85 },
+        { "month": 6, "recovery": 92 }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# Python requirements for database population script
+# SQLite3 is built into Python, no external dependencies needed
+
+# Optional: for better error handling and logging
+# No additional packages required for basic functionality
+

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NightLight Economy Analyzer | NASA VIIRS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-icon">🛰️</span>
+                <span class="logo-text">NightLight<span class="highlight">Economy</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="analysis.html" class="nav-link">Analysis</a>
+                <a href="compare.html" class="nav-link">Compare</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <a href="dashboard.html" class="btn-primary">Launch App</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-landing">
+        <div class="hero-content-landing">
+            <div class="badge">🚀 Powered by NASA VIIRS Data</div>
+            <h1 class="hero-title-main">
+                Track Earth's Economic Pulse<br>
+                Through <span class="gradient-text">Night Lights</span>
+            </h1>
+            <p class="hero-description">
+                Real-time satellite analysis revealing economic growth, urbanization, 
+                illegal mining, and disaster impact across 195+ countries from 2015-2024
+            </p>
+            <div class="hero-buttons">
+                <a href="dashboard.html" class="btn-hero-primary">
+                    <span>Explore Dashboard</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="#features" class="btn-hero-secondary">
+                    <span>View Features</span>
+                </a>
+            </div>
+            
+            <!-- Live Stats Counter -->
+            <div class="live-stats">
+                <div class="stat-box">
+                    <div class="stat-number" id="yearsCounter">0</div>
+                    <div class="stat-label">Years Tracked</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="regionsCounter">0</div>
+                    <div class="stat-label">Regions Analyzed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="dataPointsCounter">0</div>
+                    <div class="stat-label">Data Points</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 3D Globe Container -->
+        <div class="globe-container" id="globeContainer"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2 class="section-title">Powerful <span class="highlight">Features</span></h2>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">Economic Growth Tracking</h3>
+                <p class="feature-text">
+                    Monitor urbanization and industrial expansion through night-light 
+                    brightness changes over 9 years.
+                </p>
+                <a href="dashboard.html" class="feature-link">Explore →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⛏️</div>
+                <h3 class="feature-title">Illegal Mining Detection</h3>
+                <p class="feature-text">
+                    AI-powered anomaly detection identifies suspicious brightness 
+                    spikes in forest and restricted areas.
+                </p>
+                <a href="mining.html" class="feature-link">Detect →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌊</div>
+                <h3 class="feature-title">Disaster Impact Analysis</h3>
+                <p class="feature-text">
+                    Track post-disaster recovery by measuring brightness drops after 
+                    floods, earthquakes, and cyclones.
+                </p>
+                <a href="disaster.html" class="feature-link">Analyze →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Electrification Progress</h3>
+                <p class="feature-text">
+                    Visualize rural electrification initiatives and infrastructure 
+                    development in real-time.
+                </p>
+                <a href="analysis.html" class="feature-link">View →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">Region Comparison</h3>
+                <p class="feature-text">
+                    Compare economic development between states, cities, and countries 
+                    with side-by-side analytics.
+                </p>
+                <a href="compare.html" class="feature-link">Compare →</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Automated Reports</h3>
+                <p class="feature-text">
+                    Generate detailed PDF reports with visualizations, insights, and 
+                    recommendations.
+                </p>
+                <a href="analysis.html" class="feature-link">Generate →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases-section">
+        <h2 class="section-title">Real-World <span class="highlight">Applications</span></h2>
+        <div class="use-cases-grid">
+            
+            <div class="use-case-card">
+                <div class="use-case-number">01</div>
+                <h3>Policy Making</h3>
+                <p>Government agencies use night-light data for infrastructure planning and budget allocation.</p>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-number">02</div>
+                <h3>Investment Analysis</h3>
+                <p>Financial institutions assess regional economic potential before major investments.</p>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-number">03</div>
+                <h3>Environmental Monitoring</h3>
+                <p>Detect unauthorized industrial activity in protected forest and wildlife areas.</p>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-number">04</div>
+                <h3>Disaster Response</h3>
+                <p>Emergency teams prioritize rescue operations based on brightness drop patterns.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Analyze Your Region?</h2>
+            <p class="cta-text">Access 9 years of satellite data with AI-powered insights</p>
+            <a href="dashboard.html" class="btn-cta">Start Analysis Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">🛰️ NightLightEconomy</h3>
+                <p>Powered by NASA VIIRS satellite data</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="compare.html">Compare</a>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="about.html">About</a>
+                <a href="#" id="docsLink">Documentation</a>
+                <a href="#" id="apiLink">API Access</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 NightLight Economy Analyzer. Data from NASA EARTHDATA.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/landing.js"></script>
+    <script src="js/globe.js"></script>
+</body>
+</html>

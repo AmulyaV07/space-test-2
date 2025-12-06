@@ -1,0 +1,395 @@
+/* ====================================
+   DASHBOARD STYLES
+==================================== */
+
+.dashboard-main {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 1rem 1rem;
+    display: grid;
+    grid-template-columns: 320px 1fr 380px;
+    gap: 1.5rem;
+    max-width: 1800px;
+    margin: 0 auto;
+    height: calc(100vh - 80px);
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.sidebar-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-display);
+}
+
+.control-section {
+    margin-bottom: 1.5rem;
+}
+
+.control-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.control-input {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.control-input:hover,
+.control-input:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+    outline: none;
+}
+
+.control-input option {
+    background: var(--bg-secondary);
+}
+
+/* Year Slider */
+.year-slider-wrapper {
+    padding: 1rem 0;
+}
+
+.year-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.year-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.year-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.year-display {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 1rem 0;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+}
+
+.year-range {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Mode Buttons */
+.mode-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mode-btn {
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.mode-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.quick-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.quick-stat-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateX(5px);
+}
+
+.stat-icon-small {
+    font-size: 1.8rem;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-label-small {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn-action,
+.btn-action-outline {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-action {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 217, 255, 0.4);
+}
+
+.btn-action-outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+}
+
+.btn-action-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(0, 217, 255, 0.05);
+}
+
+/* Map Section */
+.map-section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.map-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+}
+
+.map-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.map-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.map-control-btn {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-control-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.map-container {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Map Legend */
+.map-legend {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.legend-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.legend-gradient {
+    height: 12px;
+    border-radius: 6px;
+    background: linear-gradient(to right, #1E293B, #3B82F6, #FBBF24, #FF6B9D);
+    margin-bottom: 0.5rem;
+}
+
+.legend-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Insights Panel */
+.insights-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.insights-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.insights-header h2 {
+    font-size: 1.3rem;
+    font-family: var(--font-display);
+}
+
+.refresh-btn {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: rotate(180deg);
+}
+
+/* Chart Section */
+.chart-section {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+}
+
+.chart-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .dashboard-main {
+        grid-template-columns: 280px 1fr 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .dashboard-main {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .sidebar,
+    .insights-panel {
+        height: auto;
+        max-height: 600px;
+    }
+}
